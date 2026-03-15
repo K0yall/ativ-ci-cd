@@ -1,0 +1,48 @@
+name: Advanced Quality Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  # ESTÁGIO 1: Análise de Qualidade (Linter)
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Flake8 (Linter)
+        run: pip install flake8
+      - name: Run Linting
+        run: |
+          # Verifica erros de sintaxe e estilo
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+  # ESTÁGIO 2: Segurança (Security Scan)
+  security-scan:
+    needs: quality-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Bandit (Security Tool)
+        run: pip install bandit
+      - name: Scan for vulnerabilities
+        run: bandit -r . -x ./tests
+
+  # ESTÁGIO 3: Simulação de Artefato e Deploy
+  artifact-deploy:
+    needs: security-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate Build Artifact
+        run: |
+          echo "Empacotando aplicação..."
+          zip -r deploy-package.zip . 
+      - name: Simulate Cloud Push
+        run: |
+          echo "Enviando pacote para o ambiente de homologação..."
+          echo "Status: Concluído com sucesso! ✅"

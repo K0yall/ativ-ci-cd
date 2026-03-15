@@ -1,6 +1,6 @@
 # Minha primeira Pipeline de CI/CD
 
-Oi! Este repositório foi criado para uma atividade prática onde explorei o **GitHub Actions**. A ideia aqui não é só guardar o código, mas mostrar como automatizar processos que acontecem toda vez que eu mando uma atualização para o GitHub.
+Este repositório foi criado para uma atividade prática onde explorei o **GitHub Actions**. A ideia aqui não é só guardar o código, mas mostrar como automatizar processos que acontecem toda vez que eu mando uma atualização para o GitHub.
 
 ### O que o meu projeto faz automaticamente?
 Criei um fluxo dividido em 3 partes principais para garantir que o código esteja bom:

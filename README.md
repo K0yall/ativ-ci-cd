@@ -1,19 +1,14 @@
-# 🚀 Projeto de Exploração de CI/CD com GitHub Actions
+# Minha primeira Pipeline de CI/CD 🚀
 
-Este repositório foi criado para a atividade de exploração de recursos de **Integração Contínua e Entrega Contínua (CI/CD)**.
+Oi! Este repositório foi criado para uma atividade prática onde explorei o **GitHub Actions**. A ideia aqui não é só guardar o código, mas mostrar como automatizar processos que acontecem toda vez que eu mando uma atualização para o GitHub.
 
-## 🛠️ Tecnologias Utilizadas
-* **Linguagem:** Python
-* **Automação:** GitHub Actions
-* **Qualidade:** Flake8 (Linter)
-* **Segurança:** Bandit (Security Scan)
+### O que o meu projeto faz automaticamente?
+Criei um fluxo dividido em 3 partes principais para garantir que o código esteja bom:
 
-## 🔄 Fluxo do Pipeline (Pipeline Stages)
-O arquivo de workflow está configurado com 3 estágios sequenciais:
+1.  **Check de Qualidade (Linting):** O GitHub olha se o meu código Python está escrito direitinho, sem bagunça ou erros bobos de digitação.
+2.  **Varredura de Segurança:** Ele faz um "scan" para ver se não deixei nenhuma falha de segurança ou bobeira no código que possa ser perigosa.
+3.  **Simulação de Deploy:** Se passar em tudo, ele empacota o projeto num arquivo `.zip` e simula o envio para um servidor.
 
-1.  **Quality Check (Linting):** Analisa o código em busca de erros de sintaxe e padrões de estilo (PEP8) usando o `flake8`.
-2.  **Security Scan:** Realiza uma varredura de segurança com o `bandit` para encontrar vulnerabilidades comuns.
-3.  **Artifact & Deploy Simulation:** Gera um artefato compactado (`.zip`) do código e simula o envio para um ambiente de produção/homologação.
-
-## 📊 Status do Pipeline
-Você pode conferir a execução dos estágios na aba [Actions](./actions) deste repositório.
+---
+### Como ver isso funcionando?
+É só clicar ali na aba **[Actions](https://github.com/SEU-USUARIO/SEU-REPO/actions)**. Lá dá para ver cada um desses 3 passos ficando verdinhos conforme o GitHub termina de processar.

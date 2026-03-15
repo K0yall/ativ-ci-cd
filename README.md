@@ -1,7 +1,19 @@
-# Projeto de Exploração de CI/CD (GitHub Actions)
+# 🚀 Projeto de Exploração de CI/CD com GitHub Actions
 
-Este repositório demonstra um fluxo de CI/CD automatizado com 3 estágios:
+Este repositório foi criado para a atividade de exploração de recursos de **Integração Contínua e Entrega Contínua (CI/CD)**.
 
-1.  **Linter (Quality Check):** Uso do `flake8` para garantir que o código segue os padrões PEP8.
-2.  **Security Scan:** Uso do `bandit` para verificar vulnerabilidades de segurança no código Python.
-3.  **Deploy Simulation:** Simulação de empacotamento (`zip`) e deploy em ambiente de homologação.
+## 🛠️ Tecnologias Utilizadas
+* **Linguagem:** Python
+* **Automação:** GitHub Actions
+* **Qualidade:** Flake8 (Linter)
+* **Segurança:** Bandit (Security Scan)
+
+## 🔄 Fluxo do Pipeline (Pipeline Stages)
+O arquivo de workflow está configurado com 3 estágios sequenciais:
+
+1.  **Quality Check (Linting):** Analisa o código em busca de erros de sintaxe e padrões de estilo (PEP8) usando o `flake8`.
+2.  **Security Scan:** Realiza uma varredura de segurança com o `bandit` para encontrar vulnerabilidades comuns.
+3.  **Artifact & Deploy Simulation:** Gera um artefato compactado (`.zip`) do código e simula o envio para um ambiente de produção/homologação.
+
+## 📊 Status do Pipeline
+Você pode conferir a execução dos estágios na aba [Actions](./actions) deste repositório.
